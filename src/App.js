@@ -1,17 +1,31 @@
-import logo from './logo.svg'
-import './App.css'
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
+
+import useAuthUser from './hooks/useAuthUser'
+import Login from './features/auth/Login'
 
 function App() {
-  console.log('snandjsa')
+  const currentUser = useAuthUser()
+
+  console.log('currentUser', currentUser)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/">
+              <Button variant="outlined" color="primary">
+                Primary
+              </Button>
+            </Route>
+          </Switch>
+        </header>
+      </div>
+    </Router>
   )
 }
 
