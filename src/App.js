@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button'
 
 import useAuthUser from './hooks/useAuthUser'
 import Login from './features/auth/Login'
+import Dashboard from './features/dashboard/Dashboard'
 
 function App() {
   const currentUser = useAuthUser()
@@ -16,6 +17,9 @@ function App() {
           <Switch>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="/">
               <Button variant="outlined" color="primary">
