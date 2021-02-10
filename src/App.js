@@ -10,10 +10,10 @@ import { Typography } from '@material-ui/core'
 
 import './App.css'
 import useAuthUser from './hooks/useAuthUser'
-import Login from './features/auth/Login'
-import Dashboard from './features/dashboard/Dashboard'
+import { Login } from './features/auth/Login'
+import { Dashboard } from './features/dashboard/Dashboard'
 
-function App() {
+export const App = () => {
   const currentUser = useAuthUser()
 
   const PrivateRoute = ({ children, ...rest }) => {
@@ -60,5 +60,3 @@ function App() {
     </Router>
   )
 }
-
-export default App

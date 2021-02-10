@@ -10,8 +10,10 @@ const GoogleBtn = styled(Button)`
     width: 200px;
   }
 `
+//TODO: Add TS
+//TODO: Add login with email&password
 
-export default () => {
+export const Login = () => {
   return (
     <div>
       <GoogleBtn onClick={googleAuth}>Google login</GoogleBtn>
